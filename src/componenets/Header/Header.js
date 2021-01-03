@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 // Theme
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./GlobalStyles";
-import { lightTheme, darkTheme } from "./Theme";
+import { GlobalStyles } from "../../Theme/GlobalStyles";
+import { lightTheme, darkTheme } from "../../Theme/Theme";
 
 import "./Header.scss";
 
