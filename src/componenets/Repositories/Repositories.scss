@@ -1,0 +1,20 @@
+@import '../../styles/styles.scss';
+
+.repositories {
+  display: flex;
+  flex-direction: column;
+}
+.repository {
+  text-decoration: none;
+  background: var(--repo-bg-color);
+  color: var(--repo-color);
+  padding: 5px;
+  margin: 5px 0;
+  overflow: hidden;
+  @extend %transition-shared;
+
+  &:hover {
+    background: var(--repo-bg-color-hover);
+    color: var(--repo-color-hover);
+  }
+}

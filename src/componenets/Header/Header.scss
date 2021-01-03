@@ -1,0 +1,92 @@
+@import '../../styles/styles.scss';
+
+// HEADER
+
+header {
+  background-color: var(--theme-color-light);
+  color: #fff;
+  height: 100px;
+  padding: 30px 0;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.web-title {
+  font-family: 'Texturina', serif;
+  font-weight: 700;
+  font-size: 45px;
+  text-decoration: none;
+  color: #fff;
+}
+
+// THEME SLIDER
+
+.web-theme {
+  display: flex;
+  align-items: center;
+
+  i {
+    opacity: 0.7;
+  }
+}
+
+.theme_slider {
+  display: inline-block;
+  height: 28px;
+  width: 64px;
+  position: relative;
+  margin: 0 10px;
+}
+
+.slider {
+  cursor: pointer;
+  background-color: #ffffff;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider.dark {
+  background: rgba(105, 220, 111, 0.8);
+}
+
+.slider.dark.round:before {
+  transform: translateX(33px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider:before {
+  content: '';
+  position: absolute;
+  background-color: var(--theme-color-light);
+  bottom: 5px;
+  height: 18px;
+  left: 6px;
+  transition: 0.4s;
+  width: 18px;
+}
+
+@media only screen and (max-width: $breakpoint-mobile-landscape) {
+  .web-title {
+    font-size: 35px;
+  }
+}
+@media only screen and (max-width: $breakpoint-mobile-landscape-small) {
+  .web-title {
+    font-size: 25px;
+  }
+}

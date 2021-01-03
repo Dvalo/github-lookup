@@ -1,0 +1,44 @@
+@import '../../styles/styles.scss';
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
+
+.nf-page {
+  color: var(--theme-text-light);
+  font-family: 'Arvo', serif;
+  padding: 100px 0;
+}
+.content-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.wrap_404 {
+  display: flex;
+  align-items: center;
+}
+.numb {
+  font-size: 80px;
+}
+.icon {
+  font-size: 60px;
+  margin: 0 15px;
+}
+.heading {
+  font-weight: 400;
+  font-size: 20px;
+}
+.desc {
+  font-size: 14px;
+  .small {
+    font-size: 9px;
+  }
+}
+.go-back {
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #40bb37;
+  padding: 10px;
+  margin: 20px 0;
+  border: none;
+  outline: none;
+  color: #fff;
+}

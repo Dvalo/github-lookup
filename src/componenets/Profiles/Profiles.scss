@@ -1,0 +1,207 @@
+@import '../../styles/styles.scss';
+
+// PROFILE PAGES (FAVOURITE PROFILES / SINGLE PROFILES)
+#favourite-profiles,
+#profile {
+  position: relative;
+  z-index: 9;
+}
+
+// LIST VIEW
+.list {
+  .profile-card,
+  .profile-details-wrap {
+    @extend %align-center-shared;
+    justify-content: flex-start;
+  }
+  .profile-card {
+    padding: 10px !important;
+    margin-bottom: 10px;
+  }
+  .profile-type {
+    left: auto;
+    right: 10px;
+  }
+  .avatar img {
+    width: 96px;
+    height: 96px;
+  }
+  .username-wrap {
+    padding: 0 20px;
+  }
+  .repositories {
+    flex-direction: row;
+  }
+  .repository {
+    margin: 0 5px;
+  }
+  .notif-message.repos {
+    border-bottom: none;
+  }
+  .view-list {
+    background-color: var(--border-color-light);
+  }
+}
+
+// GRID VIEW
+.grid {
+  .profile-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, auto));
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+  .view-grid {
+    background-color: var(--border-color-light);
+  }
+}
+#favourite-profiles {
+  .profile-card {
+    position: relative;
+    text-align: center;
+    padding: 40px;
+    background: var(--theme-card-bg);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: 0.25s all;
+  }
+}
+#profile {
+  .profile-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .profile-wrapper {
+    position: relative;
+    text-align: center;
+    padding: 40px;
+    background: var(--theme-card-bg);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    @extend %transition-shared;
+  }
+}
+.username-wrap {
+  padding: 10px 0;
+}
+.username {
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--theme-light-orange);
+  text-decoration: none;
+  @extend %transition-shared;
+
+  &:hover {
+    color: var(--theme-dark-orange);
+  }
+}
+
+.avatar img {
+  border-radius: 50%;
+}
+
+.profile-type {
+  position: absolute;
+  font-size: 10px;
+  background: var(--repo-bg-color);
+  color: var(--theme-light-yellow);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 6px;
+  border-radius: 4px;
+  left: 10px;
+  top: 10px;
+}
+
+// VIEW CHANGER
+
+.view-wrap {
+  text-align: right;
+  padding: 10px 0;
+}
+.view-icon {
+  color: var(--theme-text-light);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px;
+  @extend %transition-shared;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+.view-icon:first-child {
+  border-top: 1px solid var(--border-color-light);
+  border-left: 1px solid var(--border-color-light);
+  border-bottom: 1px solid var(--border-color-light);
+}
+.view-icon:last-child {
+  border: 1px solid var(--border-color-light);
+}
+/* MOVE */
+
+.notif-message {
+  color: var(--theme-text-light);
+  padding: 10px 0;
+}
+.notif-message.repos {
+  padding: 10px 0 !important;
+  border-bottom: 1px solid var(--border-color-light);
+}
+.notif-message.empty {
+  padding-bottom: 0;
+}
+
+@media only screen and (max-width: $breakpoint-laptop) {
+  .grid {
+    .profile-wrapper {
+      grid-template-columns: repeat(2, minmax(300px, auto));
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet-landscape) {
+  .list {
+    .profile-details-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 10px;
+    }
+    .username-wrap {
+      padding: 5px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet-portrait) {
+  .list {
+    .profile-details-wrap {
+      margin-left: 30px;
+    }
+    .repositories {
+      flex-direction: column;
+    }
+    .repository {
+      margin: 1px 0;
+    }
+  }
+  .grid {
+    .profile-wrapper {
+      grid-template-columns: repeat(1, minmax(300px, auto));
+    }
+  }
+}
+@media only screen and (max-width: $breakpoint-mobile-landscape-small) {
+  .list {
+    .profile-card {
+      flex-direction: column;
+    }
+    .profile-details-wrap {
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+    }
+    .username-wrap {
+      padding: 5px;
+    }
+  }
+}

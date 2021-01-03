@@ -1,0 +1,31 @@
+@import '../../styles/styles.scss';
+
+.orgs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, auto));
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border-color-light);
+}
+
+.org-card {
+  position: relative;
+  padding: 10px;
+
+  .profile-type {
+    left: auto;
+    right: 10px;
+  }
+}
+@media only screen and (max-width: $breakpoint-laptop) {
+  .orgs {
+    grid-template-columns: repeat(2, minmax(300px, auto));
+  }
+}
+
+@media only screen and (max-width: $breakpoint-tablet-portrait) {
+  .orgs {
+    grid-template-columns: repeat(1, minmax(200px, auto));
+  }
+}
