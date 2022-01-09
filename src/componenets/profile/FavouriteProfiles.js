@@ -23,7 +23,7 @@ function FavouriteProfiles(props) {
     return <PageNotFound />;
   }
   if (loading) {
-    return <Loading />;
+    return <Loading size={350} />;
   }
   if (data) {
     return (
