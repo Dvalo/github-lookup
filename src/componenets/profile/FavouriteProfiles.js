@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ProfileCard from "./ProfileCard";
 import Loading from "../loader/Loading";
 import PageNotFound from "../page-not-found/PageNotFound";
-import GetData from "../../api/index";
+import fetchData from "../../api/index";
 
 import "./profile.scss";
 
@@ -11,7 +11,7 @@ function FavouriteProfiles() {
     localStorage.getItem("view") === null ? "list" : localStorage.getItem("view")
   );
 
-  const { data, loading, error } = GetData("https://api.github.com/users");
+  const { data, loading, error } = fetchData("https://api.github.com/users");
 
   const handleViewChange = (newView) => {
     localStorage.setItem("view", newView);

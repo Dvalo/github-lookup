@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function GetData(apiUrl) {
+export default function fetchData(apiUrl) {
   const [data, setData] = useState();
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get(`${apiUrl}`)
+      .get(apiUrl)
       .then((response) => {
         if (response["data"]) {
           setData(response.data);
@@ -19,6 +19,7 @@ export default function GetData(apiUrl) {
         }
       })
       .catch((err) => {
+        setLoading(false);
         setError(err);
       });
   }, [apiUrl]);

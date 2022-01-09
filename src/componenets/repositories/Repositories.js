@@ -1,11 +1,11 @@
 import React from "react";
-import GetData from "../../api/index";
+import fetchData from "../../api/index";
 import Loading from "../loader/Loading";
 
 import "./repository.scss";
 
 function Repositories({ type, username }) {
-  const { loading, data } = GetData(`https://api.github.com/${type}/${username}/repos`);
+  const { loading, data } = fetchData(`https://api.github.com/${type}/${username}/repos`);
 
   if (loading) {
     return <Loading size={50} />;

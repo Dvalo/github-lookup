@@ -1,12 +1,12 @@
 import React from "react";
-import GetData from "../../api/index";
+import fetchData from "../../api/index";
 import Loading from "../loader/Loading";
 import ProfileCard from "../profile/ProfileCard";
 
 import "./organization.scss";
 
 function Organization({ username }) {
-  const { loading, data } = GetData(`https://api.github.com/users/${username}/orgs`);
+  const { loading, data } = fetchData(`https://api.github.com/users/${username}/orgs`);
 
   if (loading) {
     return <Loading size={50} />;

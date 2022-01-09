@@ -3,15 +3,12 @@ import ProfileCard from "./ProfileCard";
 import Loading from "../loader/Loading";
 import PageNotFound from "../page-not-found/PageNotFound";
 import Organization from "../organization/Organization";
-import GetData from "../../api/index";
+import fetchData from "../../api/index";
 import "./profile.scss";
 
 function SingleProfile({ username }) {
-  const { data, loading, error } = GetData(`https://api.github.com/users/${username}`);
+  const { data, loading } = fetchData(`https://api.github.com/users/${username}`);
 
-  if (error) {
-    return <PageNotFound />;
-  }
   if (loading) {
     return <Loading size={350} />;
   }
@@ -27,7 +24,7 @@ function SingleProfile({ username }) {
       </section>
     );
   }
-  return <div />;
+  return <PageNotFound />;
 }
 
 export default SingleProfile;

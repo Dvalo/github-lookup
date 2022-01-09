@@ -21,6 +21,11 @@ function PageNotFound() {
             <span className="small">
               Unless you were looking for this error page, in which case you found it ;)
             </span>
+            <br />
+            <span className="small">
+              Honestly you just probably reached GitHub&apos;s api rate limit, give it a few
+              minutes.
+            </span>
           </p>
           <Link to="/" className="go-back">
             Go to Home
