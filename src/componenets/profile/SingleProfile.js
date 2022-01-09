@@ -6,7 +6,8 @@ import Organization from "../organization/Organization";
 import fetchData from "../../api/index";
 import "./profile.scss";
 
-function SingleProfile({ username }) {
+function SingleProfile(props) {
+  const { username } = props.match.params;
   const { data, loading } = fetchData(`https://api.github.com/users/${username}`);
 
   if (loading) {
