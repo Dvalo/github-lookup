@@ -74,14 +74,16 @@
 
 // RECENT SEARCHES
 .recent-searches {
-  position: relative;
-  z-index: -1;
+  position: absolute;
+  width: 100%;
   opacity: 0;
   padding: 10px;
   background: var(--theme-card-bg);
   border-top: 1px solid var(--repo-bg-color);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   @extend %transition-shared;
+
   span {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -98,12 +100,9 @@
     }
   }
 }
-.focused {
-  height: auto !important;
-}
+
 .focused {
   .recent-searches {
-    z-index: 99;
     opacity: 1;
   }
 }
