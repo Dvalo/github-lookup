@@ -1,38 +1,36 @@
 import React from "react";
 import GetData from "../../api/index";
+import Loading from "../loader/Loading";
 
 import "./repository.scss";
 
-function Repositories(props) {
-  const { data } = GetData(`https://api.github.com/${props.type}/${props.username}/repos`);
+function Repositories({ type, username }) {
+  const { loading, data } = GetData(`https://api.github.com/${type}/${username}/repos`);
 
-  if (data) {
-    if (data.length !== 0) {
-      return (
-        <div className="repositories">
-          {data.slice(0, 3).map(function (repo, index) {
-            return (
-              <a
-                href={repo.html_url}
-                target="_blank"
-                rel="noreferrer"
-                className="repository"
-                key={repo.name}>
-                {repo.name}
-              </a>
-            );
-          })}
-        </div>
-      );
-    } else {
-      return (
-        <div className="notif-message repos empty">
-          <span>{props.username}</span> does not have any repositories.
-        </div>
-      );
-    }
+  if (loading) {
+    return <Loading size={50} />;
   }
-  return <div />;
+  if (data && data.length !== 0) {
+    return (
+      <div className="repositories">
+        {data.slice(0, 3).map((repo) => (
+          <a
+            href={repo.html_url}
+            target="_blank"
+            rel="noreferrer"
+            className="repository"
+            key={repo.name}>
+            {repo.name}
+          </a>
+        ))}
+      </div>
+    );
+  }
+  return (
+    <div className="notif-message repos empty">
+      <span>{username}</span> does not have any repositories.
+    </div>
+  );
 }
 
 export default Repositories;
