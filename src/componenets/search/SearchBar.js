@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import RecentSearches from "./RecentSearches";
 
 import "./search-bar.scss";
 
@@ -39,31 +40,6 @@ function SearchBar() {
     updateRecentSearches();
   };
 
-  const handleClick = (redirect) => {
-    push({
-      pathname: `/${redirect}`
-    });
-  };
-
-  const displayRecentSearches = () => {
-    if (recentSearches.length > 0) {
-      return (
-        <div className="recent-searches">
-          <span>Recent Searches</span>
-          {recentSearches.map((search) => {
-            return (
-              <div className="recent-search" key={search}>
-                <Link to={`/${search}`} onMouseDown={() => handleClick(search)}>
-                  {search}
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-      );
-    }
-  };
-
   return (
     <div id="search-bar" className={inputFocused}>
       <div className="container">
@@ -87,7 +63,7 @@ function SearchBar() {
             </button>
           </div>
         </div>
-        {displayRecentSearches()}
+        {recentSearches.length > 0 && <RecentSearches searches={recentSearches} />}
       </div>
     </div>
   );
