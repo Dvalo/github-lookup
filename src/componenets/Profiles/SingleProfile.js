@@ -1,4 +1,5 @@
 import React from "react";
+import Loading from "../loader/Loading";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import Repositories from "../Repositories/Repositories";
 import Organization from "../Organization/Organization";
@@ -13,7 +14,7 @@ function FavouriteProfiles(props) {
     return <PageNotFound />;
   }
   if (loading) {
-    return <div />;
+    return <Loading />;
   }
   if (data) {
     return (

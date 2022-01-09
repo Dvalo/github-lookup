@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Repositories from "../Repositories/Repositories";
 import { Link } from "react-router-dom";
+import Loading from "../loader/Loading";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import GetData from "../../api/index";
 
@@ -22,7 +23,7 @@ function FavouriteProfiles(props) {
     return <PageNotFound />;
   }
   if (loading) {
-    return <div />;
+    return <Loading />;
   }
   if (data) {
     return (
