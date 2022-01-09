@@ -1,9 +1,9 @@
 import React from "react";
 import GetData from "../../api/index";
 
-import "./Repositories.scss";
+import "./repository.scss";
 
-function FavouriteProfiles(props) {
+function Repositories(props) {
   const { data } = GetData(`https://api.github.com/${props.type}/${props.username}/repos`);
 
   if (data) {
@@ -35,4 +35,4 @@ function FavouriteProfiles(props) {
   return <div />;
 }
 
-export default FavouriteProfiles;
+export default Repositories;

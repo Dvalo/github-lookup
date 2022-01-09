@@ -1,12 +1,12 @@
 import React from "react";
 import Loading from "../loader/Loading";
-import PageNotFound from "../PageNotFound/PageNotFound";
-import Repositories from "../Repositories/Repositories";
-import Organization from "../Organization/Organization";
+import PageNotFound from "../page-not-found/PageNotFound";
+import Repositories from "../repositories/Repositories";
+import Organization from "../organization/Organization";
 import GetData from "../../api/index";
-import "./Profiles.scss";
+import "./profile.scss";
 
-function FavouriteProfiles(props) {
+function SingleProfile(props) {
   const currentUsername = props.username;
   const { data, loading, error } = GetData(`https://api.github.com/users/${currentUsername}`);
 
@@ -44,4 +44,4 @@ function FavouriteProfiles(props) {
   return <div />;
 }
 
-export default FavouriteProfiles;
+export default SingleProfile;

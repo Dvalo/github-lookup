@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Repositories from "../Repositories/Repositories";
+import Repositories from "../repositories/Repositories";
 import { Link } from "react-router-dom";
 import Loading from "../loader/Loading";
-import PageNotFound from "../PageNotFound/PageNotFound";
+import PageNotFound from "../page-not-found/PageNotFound";
 import GetData from "../../api/index";
 
-import "./Profiles.scss";
+import "./profile.scss";
 
 function FavouriteProfiles(props) {
   const [view, setView] = useState(

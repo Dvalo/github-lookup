@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./PageNotFound.scss";
+import "./page-not-found.scss";
 
 function PageNotFound() {
   return (

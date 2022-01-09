@@ -1,8 +1,8 @@
 import React from "react";
 import GetData from "../../api/index";
-import Repositories from "../Repositories/Repositories";
+import Repositories from "../repositories/Repositories";
 
-import "./Organization.scss";
+import "./organization.scss";
 
 function Organization(props) {
   const { data } = GetData(`https://api.github.com/users/${props.username}/orgs`);

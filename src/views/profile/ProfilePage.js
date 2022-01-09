@@ -1,8 +1,8 @@
 import React from "react";
-import SearchBar from "../../componenets/SearchBar/SearchBar";
-import Header from "../../componenets/Header/Header";
+import SearchBar from "../../componenets/search/SearchBar";
+import Header from "../../componenets/header/Header";
 
-import SingleProfile from "../../componenets/Profiles/SingleProfile";
+import SingleProfile from "../../componenets/profile/SingleProfile";
 
 function ProfilePage(props) {
   const { username } = props.match.params;

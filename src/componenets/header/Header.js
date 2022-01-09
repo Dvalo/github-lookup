@@ -6,7 +6,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../../Theme/GlobalStyles";
 import { lightTheme, darkTheme } from "../../Theme/Theme";
 
-import "./Header.scss";
+import "./header.scss";
 
 function Header() {
   const [theme, setTheme] = useState(
