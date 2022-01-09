@@ -7,6 +7,25 @@
   z-index: 9;
 }
 
+.profile-card {
+  position: relative;
+
+  &.Org {
+    padding: 10px;
+    
+    .profile-type {
+      left: auto;
+      right: 10px;
+    }
+  }
+
+  &.User {
+    .avatar img {
+      border-radius: 50%;
+    }
+  }
+}
+
 // LIST VIEW
 .list {
   .profile-card,
@@ -94,10 +113,6 @@
   &:hover {
     color: var(--theme-dark-orange);
   }
-}
-
-.avatar img {
-  border-radius: 50%;
 }
 
 .profile-type {

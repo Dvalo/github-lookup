@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Repositories from "../repositories/Repositories";
-import { Link } from "react-router-dom";
+import ProfileCard from "./ProfileCard";
 import Loading from "../loader/Loading";
 import PageNotFound from "../page-not-found/PageNotFound";
 import GetData from "../../api/index";
@@ -40,24 +39,7 @@ function FavouriteProfiles() {
             </div>
             <div className="profile-wrapper">
               {data.map((profile) => (
-                <div className="profile-card" key={profile.login}>
-                  <div className="profile-type">{profile.type}</div>
-                  <div className="avatar">
-                    <img
-                      src={profile.avatar_url}
-                      alt={profile.login}
-                      width="164"
-                      height="164"></img>
-                  </div>
-                  <div className="profile-details-wrap">
-                    <div className="username-wrap">
-                      <Link to={`/${profile.login}`} className="username">
-                        {profile.login}
-                      </Link>
-                    </div>
-                    <Repositories type="users" username={profile.login} />
-                  </div>
-                </div>
+                <ProfileCard profile={profile} newTab={false} key={profile.login} />
               ))}
             </div>
           </div>

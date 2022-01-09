@@ -1,7 +1,7 @@
 import React from "react";
+import ProfileCard from "./ProfileCard";
 import Loading from "../loader/Loading";
 import PageNotFound from "../page-not-found/PageNotFound";
-import Repositories from "../repositories/Repositories";
 import Organization from "../organization/Organization";
 import GetData from "../../api/index";
 import "./profile.scss";
@@ -20,20 +20,7 @@ function SingleProfile({ username }) {
       <section id="profile">
         <div className="container">
           <div className="profile-wrapper">
-            <div className="profile-card">
-              <div className="profile-type">{data.type}</div>
-              <div className="avatar">
-                <img src={data.avatar_url} alt={data.login} width="164" height="164"></img>
-              </div>
-              <div className="profile-details-wrap">
-                <div className="username-wrap">
-                  <a href={data.html_url} className="username" target="_blank" rel="noreferrer">
-                    {data.login}
-                  </a>
-                </div>
-                <Repositories type="users" username={data.login} />
-              </div>
-            </div>
+            <ProfileCard profile={data} newTab={true} />
             <Organization username={data.login} />
           </div>
         </div>
