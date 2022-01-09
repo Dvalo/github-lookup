@@ -6,9 +6,8 @@ import Organization from "../organization/Organization";
 import GetData from "../../api/index";
 import "./profile.scss";
 
-function SingleProfile(props) {
-  const currentUsername = props.username;
-  const { data, loading, error } = GetData(`https://api.github.com/users/${currentUsername}`);
+function SingleProfile({ username }) {
+  const { data, loading, error } = GetData(`https://api.github.com/users/${username}`);
 
   if (error) {
     return <PageNotFound />;
