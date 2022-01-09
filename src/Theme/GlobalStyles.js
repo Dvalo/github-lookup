@@ -1,4 +1,4 @@
-import { createGlobalStyle} from "styled-components"
+import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.themeDark};
@@ -16,4 +16,4 @@ export const GlobalStyles = createGlobalStyle`
     --repo-bg-color: ${({ theme }) => theme.repoBgColor};
     --repo-bg-color-hover: ${({ theme }) => theme.repoBgColorHover};
   }
-  `
+`;

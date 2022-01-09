@@ -5,12 +5,12 @@ import Header from "../../componenets/Header/Header";
 import SingleProfile from "../../componenets/Profiles/SingleProfile";
 
 function ProfilePage(props) {
-  console.log(props.match.params.username);
+  const { username } = props.match.params;
   return (
     <>
       <Header />
       <SearchBar />
-      <SingleProfile username={props.match.params.username} />
+      <SingleProfile username={username} />
     </>
   );
 }

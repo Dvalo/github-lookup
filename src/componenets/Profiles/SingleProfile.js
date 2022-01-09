@@ -7,9 +7,7 @@ import "./Profiles.scss";
 
 function FavouriteProfiles(props) {
   const currentUsername = props.username;
-  const { data, loading, error } = GetData(
-    `https://api.github.com/users/${currentUsername}`
-  );
+  const { data, loading, error } = GetData(`https://api.github.com/users/${currentUsername}`);
 
   if (error) {
     return <PageNotFound />;
@@ -25,21 +23,11 @@ function FavouriteProfiles(props) {
             <div className="profile-card">
               <div className="profile-type">{data.type}</div>
               <div className="avatar">
-                <img
-                  src={data.avatar_url}
-                  alt={data.login}
-                  width="164"
-                  height="164"
-                ></img>
+                <img src={data.avatar_url} alt={data.login} width="164" height="164"></img>
               </div>
               <div className="profile-details-wrap">
                 <div className="username-wrap">
-                  <a
-                    href={data.html_url}
-                    className="username"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <a href={data.html_url} className="username" target="_blank" rel="noreferrer">
                     {data.login}
                   </a>
                 </div>

@@ -5,17 +5,14 @@ import Repositories from "../Repositories/Repositories";
 import "./Organization.scss";
 
 function Organization(props) {
-  const { data } = GetData(
-    `https://api.github.com/users/${props.username}/orgs`
-  );
+  const { data } = GetData(`https://api.github.com/users/${props.username}/orgs`);
 
   if (data) {
     if (data.length !== 0) {
       return (
         <>
           <div className="notif-message">
-            <span>{props.username}</span> is part of the following
-            organizations.
+            <span>{props.username}</span> is part of the following organizations.
           </div>
           <div className="orgs">
             {data.map(function (org, index) {
@@ -23,12 +20,7 @@ function Organization(props) {
                 <div className="org-card" key={org.login}>
                   <div className="profile-type">Org</div>
                   <div className="org-image">
-                    <img
-                      src={org.avatar_url}
-                      alt={org.login}
-                      width="124"
-                      height="124"
-                    />
+                    <img src={org.avatar_url} alt={org.login} width="124" height="124" />
                   </div>
                   <div className="org-details-wrap">
                     <div className="username-wrap">

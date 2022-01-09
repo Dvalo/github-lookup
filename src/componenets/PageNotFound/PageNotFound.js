@@ -15,12 +15,11 @@ function PageNotFound() {
             </div>
             <div className="numb">4</div>
           </div>
-          <h3 className="heading">Looks like you're lost!</h3>
+          <h3 className="heading">Looks like you&apos;re lost!</h3>
           <p className="desc">
             The page you are looking for could not be found.{" "}
             <span className="small">
-              Unless you were looking for this error page, in which case you
-              found it ;)
+              Unless you were looking for this error page, in which case you found it ;)
             </span>
           </p>
           <Link to="/" className="go-back">

@@ -10,9 +10,7 @@ import "./Header.scss";
 
 function Header() {
   const [theme, setTheme] = useState(
-    localStorage.getItem("theme") === null
-      ? "dark"
-      : localStorage.getItem("theme")
+    localStorage.getItem("theme") === null ? "dark" : localStorage.getItem("theme")
   );
 
   const handleToggle = () => {

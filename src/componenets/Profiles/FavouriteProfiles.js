@@ -8,9 +8,7 @@ import "./Profiles.scss";
 
 function FavouriteProfiles(props) {
   const [view, setView] = useState(
-    localStorage.getItem("view") === null
-      ? "list"
-      : localStorage.getItem("view")
+    localStorage.getItem("view") === null ? "list" : localStorage.getItem("view")
   );
 
   const { data, loading, error } = GetData("https://api.github.com/users");
@@ -34,12 +32,10 @@ function FavouriteProfiles(props) {
             <div className="view-wrap">
               <i
                 className="view-icon view-list fas fa-list"
-                onClick={() => handleClick("list")}
-              ></i>
+                onClick={() => handleClick("list")}></i>
               <i
                 className="view-icon view-grid fas fa-th-large"
-                onClick={() => handleClick("grid")}
-              ></i>
+                onClick={() => handleClick("grid")}></i>
             </div>
             <div className="profile-wrapper">
               {data.map(function (profile, index) {
@@ -51,8 +47,7 @@ function FavouriteProfiles(props) {
                         src={profile.avatar_url}
                         alt={profile.login}
                         width="164"
-                        height="164"
-                      ></img>
+                        height="164"></img>
                     </div>
                     <div className="profile-details-wrap">
                       <div className="username-wrap">

@@ -26,6 +26,6 @@ export default function GetData(apiUrl) {
   return {
     data,
     error,
-    loading,
+    loading
   };
 }

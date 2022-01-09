@@ -4,9 +4,7 @@ import GetData from "../../api/index";
 import "./Repositories.scss";
 
 function FavouriteProfiles(props) {
-  const { data } = GetData(
-    `https://api.github.com/${props.type}/${props.username}/repos`
-  );
+  const { data } = GetData(`https://api.github.com/${props.type}/${props.username}/repos`);
 
   if (data) {
     if (data.length !== 0) {
@@ -19,8 +17,7 @@ function FavouriteProfiles(props) {
                 target="_blank"
                 rel="noreferrer"
                 className="repository"
-                key={repo.name}
-              >
+                key={repo.name}>
                 {repo.name}
               </a>
             );

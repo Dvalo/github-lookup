@@ -34,14 +34,14 @@ function SearchBar() {
 
   const handleSearch = () => {
     push({
-      pathname: `/${profileName}`,
+      pathname: `/${profileName}`
     });
     updateRecentSearches();
   };
 
   const handleClick = (redirect) => {
     push({
-      pathname: `/${redirect}`,
+      pathname: `/${redirect}`
     });
   };
 
@@ -77,14 +77,12 @@ function SearchBar() {
               onBlur={() => handleFocusChange(false)}
               onFocus={() => handleFocusChange(true)}
               spellCheck="false"
-              onChange={handleDescChange}/>
+              onChange={handleDescChange}
+            />
           </div>
 
           <div className="form-group search-btn">
-            <button
-              type="button"
-              className="custom-button"
-              onClick={handleSearch}>
+            <button type="button" className="custom-button" onClick={handleSearch}>
               Search
             </button>
           </div>
